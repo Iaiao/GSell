@@ -1,0 +1,112 @@
+sell-item:
+  not-empty:
+    material: WATER_BUCKET
+    name: "&aSell all!"
+    lore:
+      - "&7Sell &6{count} &7items"
+      - "&7For &a${cost}"
+    click-actions:
+      - "console /tellraw {player} \"\u00A7aSuccessfully sold \u00A76{count} \u00A7aitems for \u00A76${cost}\""
+  empty:
+    material: BUCKET
+    name: "&6Sell all!"
+    lore:
+      - "&7Cannot sell nothing"
+    click-actions:
+      - "console /tellraw {player} \"\u00A7cCannot sell nothing!\""
+
+translations:
+  gui-name: "&aGUI NAME"
+
+# transform enchanted items to common items
+# and enchantment books while selling
+transform-enchantments: true
+transform-enchant-books: true
+
+close-on-sell: true
+
+# DROP, ADD_TO_INVENTORY, REMOVE, SELL
+action-on-close: DROP
+
+# All possible click actions:
+# run /<command>[, args]      - run a command
+# console /<command>[, args]  - run a command from the Console
+# close                       - close opened inventory
+
+# Placeholders in click actions:
+# {player} everywhere
+# {cost}, {count}, {player} in Sell Item click action
+
+gui:
+  rows: 6
+  gui-row: 6
+  items:
+    '1':
+      material: REDSTONE_TORCH_ON
+      amount: 1
+      name: "&6How to sell"
+      lore:
+        - "&7Put your items into this"
+        - "&7inventory and click &aSell"
+    '2':
+      material: DARK_OAK_DOOR_ITEM
+      amount: 1
+      name: "&6Exit"
+      lore:
+        - "&7Exit from this GUI"
+      click-actions:
+        - "close"
+    '3':
+      material: COMPASS
+      amount: 1
+      name: "&6Menu"
+      lore:
+        - "&7Go back to the menu"
+      click-actions:
+        - "run /menu"
+    '4':
+      material: AIR
+      amount: 1
+      lore: []
+    '5':
+      material: SELL
+    '6':
+      material: AIR
+      amount: 1
+      lore: []
+    '7':
+      material: COMPASS
+      amount: 1
+      name: "&6Menu"
+      lore:
+        - "&7Go back to the menu"
+      click-actions:
+        - "run /menu"
+    '8':
+      material: DARK_OAK_DOOR_ITEM
+      amount: 1
+      name: "&6Exit"
+      lore:
+        - "&7Exit from this GUI"
+      click-actions:
+        - "close"
+    '9':
+      material: REDSTONE_TORCH_ON
+      amount: 1
+      name: "&6How to sell"
+      lore:
+        - "&7Put your items into this"
+        - "&7inventory and click &aSell"
+
+# see https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+prices:
+  diamond: 50
+  clay: 32.1
+  sugar: 5.7
+  other: 20
+
+# see https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html
+enchant-prices:
+  damage_all: 10
+  fire_aspect: 20
+  other: 1

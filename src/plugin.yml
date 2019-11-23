@@ -1,0 +1,20 @@
+name: GSell
+version: 1.0.0
+main: mc.iaiao.gsell.GSell
+softdepend: [Vault]
+author: Iaiao
+commands:
+  sell:
+    description: Open a GUI and sell items
+    usage: /<command>
+    permission: gsell.sell
+permissions:
+  gsell.sell:
+    description: Use /sell
+    default: true
+
+#   gsell.multiplier.x0:
+#                    x0.1, x0.2 ... x9.9, x10
+#
+#     description: Multiplies costs
+#     default: false
