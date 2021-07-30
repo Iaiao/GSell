@@ -11,7 +11,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.EnchantmentStorageMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -76,7 +75,6 @@ public class GUI {
     inventories.remove( inv );
   }
 
-  @Nullable
   public static GUI fromInventory( Inventory inv ) {
     return inventories.get( inv );
   }
